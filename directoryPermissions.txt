@@ -1,0 +1,39 @@
+#--- Read directory permissions
+ls -l -d <directory>
+
+# -l lists all details about a directory
+# -d will target directories
+# -l -d can be abbreviated to -ld <directory>
+
+#--- Permission types
+# r = read
+# w = write
+# x = execute
+# Permissions are applied in sets
+# -[owner][group][others]
+# -rwxr-xr--
+# In the above, the owner can read, write, and execute.(rwx)
+# The user group can read and execute(r-x)
+# Users who do not fall into the "owner" category and are not assigned to associated group can read only (r--)
+
+#--- Setting permissions
+# Permissions can be changed individually for specific users, groups, or others
+# u specifies users.=
+# g specifies groups
+# o specifies others
+# ugo or a(all) applies permission changes to all
+# Not entirely sure but I think the user and groups are associated to the directory using a different method. The ugo just applies the permissions to people associated
+# Syntax examples
+chmod g+w <directory> --> Applies write permissions to the group
+chmod ugo+rwx <directory> --> Applies read, write, and execute permissions to everyone
+
+#--- Set permissions for all subfolders
+sudo chmod -R 777 /parent/subfolder
+# -R parameter targets all subfolders
+# 777 Grants rwx permissions
+
+References:
+https://www.pluralsight.com/blog/it-ops/linux-file-permissions
+https://www.redhat.com/sysadmin/linux-file-permissions-explained
+https://linux.die.net/man/1/ls
+https://www.geeksforgeeks.org/how-to-chmod-777-all-subfolders-of-var-www/
