@@ -1,0 +1,19 @@
+# Install SAMBA
+sudo apt-get install samba -y
+
+# Start SAMBA service
+sudo systemctl enable --now smbd
+
+# The file being shared must be specified in the SAMBA config file
+sudo nano /etc/samba/smb.conf
+# Paste desired shared folder. If you want to restrict permissions to edit files, set "writeable = no"
+[sharedFolder]
+    path = /sharedFolder 
+    browsable = yes 
+    writeable = yes 
+    read only = no 
+
+# Set Samba password
+sudo smbpasswd -a kadeem 
+# Verify Samba username
+sudo pdbedit -L -v

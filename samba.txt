@@ -1,0 +1,28 @@
+List Samba user accounts:
+    sudo pdbedit -L -v
+
+Start Samba service:
+    sudo service smbd start
+
+Create Samba user:
+    sudo smbpasswd -L -a kadeem
+
+Enable Samba user:
+    sudo smbpasswd -L -e kadeem
+
+Shared folder example:
+
+[sharedFolder]
+   comment = Shared lab files
+   path = /sharedFolder
+   browsable = yes
+   read only = no
+   guest ok = no
+   directory mask = 0755
+   create mask = 0644
+   force user = kadeem
+
+References:
+https://ubuntu.com/tutorials/install-and-configure-samba#4-setting-up-user-accounts-and-connecting-to-share
+https://ubuntuforums.org/showthread.php?t=202605
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/s1-samba-startstop

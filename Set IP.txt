@@ -1,0 +1,33 @@
+sudo hostname DESKTOP-10
+sudo ifconfig eth0 155.1.10.100 netmask 255.255.255.0
+sudo route add default gw 155.1.10.1
+
+sudo hostname DESKTOP-7
+sudo ifconfig eth0 155.1.7.100 netmask 255.255.255.0
+sudo route add default gw 155.1.7.1
+
+sudo hostname DESKTOP-9
+sudo ifconfig eth0 155.1.9.100 netmask 255.255.255.0
+sudo route add default gw 155.1.9.1
+
+sudo hostname DESKTOP-5
+sudo ifconfig eth0 155.1.5.100 netmask 255.255.255.0
+sudo route add default gw 155.1.5.1
+
+sudo hostname DESKTOP-8
+sudo ifconfig eth0 155.1.8.100 netmask 255.255.255.0
+sudo route add default gw 155.1.8.1
+
+
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 7.7.7.7 remote-as 9
+ neighbor 7.7.7.7 ebgp-multihop 2
+ neighbor 7.7.7.7 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 7.7.7.7 activate
+ exit-address-family
+
+ ip route 7.7.7.7 255.255.255.255 155.1.37.7

@@ -1,0 +1,10 @@
+#--- Search entire system for directory
+find / -type d -name <'nameOfFolder'>
+# '/' Tells the command where to search. / indicates the entire hard drive
+# d indicates the file type. In this case, a directory/folder
+# f can be used to indicate an actual file, like a .txt file, etc
+
+
+References:
+https://linux.die.net/man/1/find
+https://superuser.com/questions/327762/how-to-find-a-directory-on-linux

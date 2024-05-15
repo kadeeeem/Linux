@@ -1,0 +1,3 @@
+https://askubuntu.com/questions/468901/how-to-show-only-hidden-files-in-terminal
+
+ls -d .!(|.)
