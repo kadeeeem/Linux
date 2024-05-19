@@ -1,0 +1,26 @@
+#--- Static IP configuration
+# Find netplan file
+# On my device, the config file was stored in /etc/netplan/IPconfig.yaml
+# Netplan syntax
+network:
+    version: 2
+    ethernets:
+        ens160
+            dhcp4: false
+            accept-ra: false
+            addresses:
+                - x.x.x.x/xx
+            routes:
+                - to: default
+                via: 10.0.0.1
+            nameservers:
+                addresses:
+                    - 8.8.8.8
+                    - 4.4.4.4
+# Apply changes using the commands below:
+# Spots any configuration errors
+sudo netplan try
+# Confirm IP settings
+ip addr | grep ens160
+# Reboot and confirm changes
+sudo reboot
