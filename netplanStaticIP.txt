@@ -18,7 +18,6 @@ network:
                     - 8.8.8.8
                     - 4.4.4.4
 
-
 # Apply changes using the commands below:
 # Spots any configuration errors
 sudo netplan try
