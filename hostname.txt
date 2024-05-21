@@ -1,0 +1,13 @@
+#--- Change hostname of a Linux device
+# Find out where the "hostname" file is located
+# It's typically located under /etc/hostname
+# Confirm using the command below
+find /etc/ -type f -name hostname*
+# /etc/ indicates the directory to initiate the search. You can search the entire computer using "/"
+# -type indicates the file type. "hostname" is a file, so we use "f" which indicates a file
+
+# Navigate to the file path retrieved from your search. In my case its:
+cd /etc/
+# Edit the hostname file
+sudo nano hostname
+# Change to your desired name
