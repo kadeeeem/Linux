@@ -18,7 +18,7 @@ network:
 sudo netplan try
 sudo netplan apply
 # Confirm IP settings
-ip addr | grep ens160
+ip addr | grep ens2
 # Reboot and confirm changes
 sudo reboot
 
