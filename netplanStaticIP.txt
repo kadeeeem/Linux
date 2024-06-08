@@ -3,7 +3,6 @@
 # On my device, the config file was stored in /etc/netplan/IPconfig.yaml
 # Netplan syntax
 network:
-network:
   version: 2
   renderer: networkd
   ethernets:
