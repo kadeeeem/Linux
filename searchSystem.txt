@@ -29,3 +29,19 @@ $ find / -type f -name host*
 > /etc/hosts.allow
 
 '*' is a wildcard and matches any string that contains the characters preceeding it.
+If you come across an error like
+> find: paths must precede expression:
+Place the file/directory name you are searching in quotes.
+
+Ex:
+$ find /etc/ -name sud*
+> find: paths must precede expression: `sudoers'
+> find: possible unquoted pattern after predicate `-name'?
+$ find /etc/ -name "sud*"
+> /etc/init.d/sudo
+> /etc/sudo.conf
+> /etc/pam.d/sudo-i
+> /etc/pam.d/sudo
+> /etc/sudoers
+> /etc/sudo_logsrvd.conf
+> /etc/sudoers.d
