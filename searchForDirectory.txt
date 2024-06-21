@@ -1,10 +1,31 @@
-#--- Search entire system for directory
-find / -type d -name <'nameOfFolder'>
-# '/' Tells the command where to search. / indicates the entire hard drive
-# d indicates the file type. In this case, a directory/folder
-# f can be used to indicate an actual file, like a .txt file, etc
+Documentation on this can be found using manpages.
+To generate the manpage in your shell, run
+$ man find
 
-
-References:
+A link to the manpage can be found here as well:
 https://linux.die.net/man/1/find
-https://superuser.com/questions/327762/how-to-find-a-directory-on-linux
+
+# Important Parameters
+
+-type
+    d = Directory
+    f = File
+
+-name
+
+
+The syntax for how I search is:
+$ find <path> -type <#> -name <fileName>
+
+For example, if I wanted to search the entire system, I'd start at the root folder which is symbolized using "/"
+
+$ find / -type f -name host*
+> /etc/hostname
+> /etc/apparmor.d/abstractions/hosts_access
+> /etc/ansible/hosts/hosts.yaml
+> /etc/hosts.deny
+> /etc/hosts
+> /etc/host.conf
+> /etc/hosts.allow
+
+'*' is a wildcard and matches any string that contains the characters preceeding it.
